@@ -1,22 +1,30 @@
 
 body {
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif; /* Changed font */
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #f8f8f8; /* Lighter background */
     color: #333;
     line-height: 1.6;
+    padding-top: 60px; /* Add padding to prevent content from being hidden by fixed header */
 }
 
 header {
-    background-color: #333;
+    background-color: #2c3e50; /* Darker header */
     color: white;
     padding: 1rem 0;
     text-align: center;
+    position: fixed; /* Fixed header */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure header is on top */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Add shadow */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -27,41 +35,56 @@ nav ul li {
 nav a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+nav a:hover {
+    color: #3498db; /* Highlight color on hover */
 }
 
 main {
     padding: 20px;
-    max-width: 800px;
-    margin: auto;
+    max-width: 900px; /* Wider content area */
+    margin: 20px auto; /* Center content with margin */
 }
 
 section {
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* More space between sections */
     background: white;
-    padding: 20px;
+    padding: 30px; /* More padding inside sections */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 h1, h2 {
-    color: #333;
-    border-bottom: 2px solid #eee;
+    color: #2c3e50; /* Match header color */
+    border-bottom: 2px solid #3498db; /* Accent color border */
     padding-bottom: 10px;
     margin-top: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
+    background-color: #2c3e50; /* Match header color */
     color: white;
-    margin-top: 20px;
+    margin-top: 30px; /* More space above footer */
 }
 
 pre {
     white-space: pre-wrap; /* Preserve whitespace and wrap long lines */
     word-wrap: break-word;
-    font-family: inherit; /* Use the main font */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for preformatted text */
+    background-color: #ecf0f1; /* Light background for pre */
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto; /* Add horizontal scroll for long lines if needed */
 }
 
 /* Basic styling for list items within sections if needed */
@@ -72,4 +95,14 @@ section ul {
 
 section ul li {
     margin-bottom: 10px;
+}
+
+/* Style for links within sections */
+section a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+section a:hover {
+    text-decoration: underline;
 }
