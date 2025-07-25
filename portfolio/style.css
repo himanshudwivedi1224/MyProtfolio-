@@ -1,24 +1,24 @@
 
 body {
-    font-family: 'Arial', sans-serif; /* Changed font */
-    margin: 0;
-    background-color: #f8f8f8; /* Lighter background */
-    color: #333;
+    font-family: 'Roboto', sans-serif; /* Use a more common professional font */
     line-height: 1.6;
+    color: #555; /* Softer text color */
+    background-color: #f4f7f6; /* Light, subtle background */
+    margin: 0; /* Remove default body margin */
     padding-top: 60px; /* Add padding to prevent content from being hidden by fixed header */
 }
 
 header {
-    background-color: #2c3e50; /* Darker header */
-    color: white;
-    padding: 1rem 0;
+    background-color: #2c3e50; /* Professional dark header */
+    color: #ecf0f1; /* Light text */
+    padding: 15px 0;
     text-align: center;
     position: fixed; /* Fixed header */
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000; /* Ensure header is on top */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Add shadow */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add shadow */
 }
 
 nav ul {
@@ -28,53 +28,54 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block; /* Use inline-block for better spacing control */
     margin: 0 15px;
 }
 
 nav a {
-    color: white;
+    color: #ecf0f1;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500; /* Medium font weight */
     transition: color 0.3s ease; /* Smooth color transition on hover */
 }
 
 nav a:hover {
-    color: #3498db; /* Highlight color on hover */
+    color: #3498db; /* Professional accent color on hover */
 }
 
 main {
     padding: 20px;
-    max-width: 900px; /* Wider content area */
+    max-width: 960px; /* Wider content area */
     margin: 20px auto; /* Center content with margin */
 }
 
 section {
     margin-bottom: 30px; /* More space between sections */
-    background: white;
-    padding: 30px; /* More padding inside sections */
+    background: #fff; /* White background for sections */
+    padding: 40px; /* More padding */
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* More prominent shadow */
 }
 
 h1, h2 {
     color: #2c3e50; /* Match header color */
     border-bottom: 2px solid #3498db; /* Accent color border */
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     margin-top: 0;
+    margin-bottom: 20px;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* More space below main heading */
 }
 
 footer {
     text-align: center;
     padding: 20px;
     background-color: #2c3e50; /* Match header color */
-    color: white;
-    margin-top: 30px; /* More space above footer */
+    color: #ecf0f1;
+    margin-top: 40px; /* More space above footer */
 }
 
 pre {
