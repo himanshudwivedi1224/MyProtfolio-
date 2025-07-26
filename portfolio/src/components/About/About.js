@@ -1,16 +1,20 @@
 import React from 'react';
 import './About.css';
+import profileImage from '../../assets/WhatsApp Image 2025-04-03 at 09.52.52_81dd09bf.jpg'; // Corrected import path after moving assets
 
 const About = () => {
   return (
     <section id="about" className="about">
-      <h2>About Me</h2>
-      <p>
-        I am a passionate Full-Stack Developer with a proven track record of designing, developing, and deploying robust and scalable software solutions. With hands-on experience in C#, .NET Core, Angular, React, and cloud technologies like Azure, I have successfully contributed to the entire software development lifecycle, from concept to deployment.
-      </p>
-      <p>
-        My experience includes leading the migration of monolithic architectures to microservices, resulting in a 30% reduction in downtime, and designing and optimizing microservices architecture to handle over 1 million requests per day. I am adept at collaborating with cross-functional teams to deliver high-quality products that meet business objectives and drive user engagement.
-      </p>
+      <div className="container about-content">
+        <img src={profileImage} alt="Himanshu Dwivedi" className="about-image" />
+        <h2>About Me</h2>
+        <p>
+          I am a passionate Full-Stack Developer with expertise in C#, .NET Core, Angular, React, and Azure. I specialize in designing, developing, and deploying scalable software solutions, with a focus on migrating monolithic architectures to microservices and optimizing performance.
+        </p>
+        <p>
+          My experience includes leading projects, enhancing data processing with AI, and building fault-tolerant systems. I am committed to delivering high-quality products and collaborating effectively with cross-functional teams to achieve business objectives.
+        </p>
+      </div>
     </section>
   );
 };

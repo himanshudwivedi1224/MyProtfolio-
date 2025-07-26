@@ -1,9 +1,22 @@
 :root {
-  --primary-color: #61dafb;
-  --secondary-color: #282c34;
-  --background-color: #1a1a1a;
-  --text-color: #ffffff;
-  --card-background: #2c2c2c;
+  /* Light Theme */
+  --primary-color: #007bff; /* A modern blue */
+  --secondary-color: #6c757d; /* A subtle grey */
+  --background-color: #f8f9fa; /* Light background */
+  --text-color: #343a40; /* Dark text for contrast */
+  --card-background: #ffffff; /* White cards */
+  --border-color: #dee2e6; /* Light border */
+  --heading-color: #0056b3; /* Darker blue for headings */
+}
+
+body.dark-theme {
+  --primary-color: #61dafb; /* React blue */
+  --secondary-color: #bbbbbb; /* Light grey */
+  --background-color: #282c34; /* Dark background */
+  --text-color: #ffffff; /* White text */
+  --card-background: #3a3f47; /* Darker cards */
+  --border-color: #444a54; /* Dark border */
+  --heading-color: #61dafb; /* React blue for headings */
 }
 
 body {
@@ -12,6 +25,8 @@ body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
 }
 
 .App {
@@ -21,15 +36,54 @@ body {
 }
 
 h1, h2, h3 {
-  color: var(--primary-color);
+  color: var(--heading-color);
+  margin-bottom: 0.5em;
 }
 
 section {
   margin-bottom: 4em;
+  padding: 2em;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth theme transition */
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.project-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 0.6em 1.2em;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.project-button:hover:not(:disabled) {
+  background-color: var(--heading-color);
+}
+
+.project-button:disabled {
+  background-color: var(--secondary-color);
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 @media (max-width: 768px) {
   .App {
     padding: 1em;
+  }
+  section {
+    padding: 1.5em;
+    margin-bottom: 2em;
   }
 }

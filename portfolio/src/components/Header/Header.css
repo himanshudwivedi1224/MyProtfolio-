@@ -2,30 +2,46 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2em 0;
-  border-bottom: 1px solid var(--primary-color);
+  padding: 1.5em 0; /* Adjusted padding */
+  /* Removed border-bottom */
 }
 
 .header h1 {
-  font-size: 2.5em;
+  font-size: 2.8em; /* Slightly larger font size */
   margin: 0;
+  color: var(--heading-color); /* Use heading color */
 }
 
 .header p {
-  font-size: 1.2em;
+  font-size: 1.3em; /* Slightly larger font size */
   margin: 0;
-  color: var(--text-color);
+  color: var(--secondary-color); /* Use secondary color for tagline */
 }
 
 .header nav a {
   color: var(--text-color);
   text-decoration: none;
-  margin-left: 2em;
-  font-size: 1.2em;
+  margin-left: 2.5em; /* Increased margin */
+  font-size: 1.1em; /* Slightly smaller font size for navigation */
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .header nav a:hover {
+  color: var(--primary-color);
+}
+
+.theme-toggle-button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-left: 2em;
+  transition: color 0.3s ease;
+}
+
+.theme-toggle-button:hover {
   color: var(--primary-color);
 }
 
@@ -34,14 +50,15 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 1em 0;
   }
 
   .header h1 {
-    font-size: 2em;
+    font-size: 2.2em;
   }
 
   .header p {
-    font-size: 1em;
+    font-size: 1.1em;
   }
 
   .header nav {
@@ -52,7 +69,12 @@
   }
 
   .header nav a {
-    margin: 0.5em;
-    font-size: 1em;
+    margin: 0.5em 0.8em; /* Adjusted margin for smaller screens */
+    font-size: 0.95em;
+  }
+
+  .theme-toggle-button {
+    margin-left: 0;
+    margin-top: 1em;
   }
 }

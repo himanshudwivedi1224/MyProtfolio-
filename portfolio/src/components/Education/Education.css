@@ -1,24 +1,49 @@
 .education {
-  padding: 4em 0;
+  padding: 2em 0; /* Adjusted padding */
+}
+
+.education h2 {
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: var(--heading-color);
 }
 
 .education-item {
   background-color: var(--card-background);
   padding: 2em;
-  border-radius: 10px;
-  border: 1px solid var(--primary-color);
+  border-radius: 8px; /* Consistent border-radius */
+  border: 1px solid var(--border-color); /* Use new border color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  max-width: 700px; /* Limit width for better readability */
+  margin: 0 auto; /* Center the item */
 }
 
 .education-item h3 {
   margin-top: 0;
+  color: var(--primary-color);
+}
+
+.education-item p {
+  margin: 0.5em 0;
+  font-size: 0.95em;
 }
 
 .education-item ul {
   padding-left: 20px;
+  margin-top: 1em;
+  font-size: 0.9em;
+  color: var(--text-color);
+}
+
+.education-item ul li {
+  margin-bottom: 0.5em;
 }
 
 @media (max-width: 768px) {
   .education {
-    padding: 2em 0;
+    padding: 1.5em 0;
+  }
+  .education-item {
+    padding: 1.5em;
   }
 }

@@ -1,15 +1,16 @@
 .contact {
-  padding: 4em 0;
+  padding: 2em 0; /* Adjusted padding */
   text-align: center;
 }
 
 .contact h2 {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
+  color: var(--heading-color);
 }
 
 .contact p {
-  font-size: 1.2em;
-  margin: 0.5em 0;
+  font-size: 1.1em; /* Adjusted font size */
+  margin: 0.8em 0; /* Adjusted margin */
 }
 
 .contact a {
@@ -19,15 +20,41 @@
 }
 
 .contact a:hover {
-  text-decoration: underline;
+  color: var(--heading-color); /* Darker blue on hover */
+}
+
+.social-links {
+  margin-top: 1.5em;
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+}
+
+.social-links a {
+  font-size: 2em; /* Icon size */
+  color: var(--secondary-color); /* Icon color */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+  color: var(--primary-color);
+  transform: translateY(-3px);
 }
 
 @media (max-width: 768px) {
   .contact {
-    padding: 2em 0;
+    padding: 1.5em 0;
   }
 
   .contact p {
     font-size: 1em;
+  }
+
+  .social-links {
+    gap: 1em;
+  }
+
+  .social-links a {
+    font-size: 1.8em;
   }
 }

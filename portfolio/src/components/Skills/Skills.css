@@ -1,5 +1,11 @@
 .skills {
-  padding: 4em 0;
+  padding: 2em 0; /* Adjusted padding */
+}
+
+.skills h2 {
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: var(--heading-color);
 }
 
 .skills-list {
@@ -7,27 +13,30 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
+  gap: 0.8em; /* Slightly smaller gap */
   justify-content: center;
+  max-width: 800px; /* Limit width for better presentation */
+  margin: 0 auto; /* Center the list */
 }
 
 .skills-list li {
-  background-color: var(--card-background);
-  color: var(--primary-color);
-  padding: 0.8em 1.5em;
-  border-radius: 25px;
+  background-color: var(--primary-color); /* Use primary color for background */
+  color: #ffffff; /* White text */
+  padding: 0.7em 1.4em; /* Adjusted padding */
+  border-radius: 5px; /* More subtle border-radius */
   font-weight: 500;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
 
 .skills-list li:hover {
-  background-color: var(--primary-color);
-  color: var(--background-color);
+  background-color: var(--heading-color); /* Darker blue on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
 }
 
 @media (max-width: 768px) {
   .skills {
-    padding: 2em 0;
+    padding: 1.5em 0;
   }
 
   .skills-list li {
