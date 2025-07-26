@@ -1,0 +1,26 @@
+.skills {
+  padding: 4em 0;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+}
+
+.skills-list li {
+  background-color: var(--card-background);
+  color: var(--primary-color);
+  padding: 0.8em 1.5em;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.skills-list li:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}

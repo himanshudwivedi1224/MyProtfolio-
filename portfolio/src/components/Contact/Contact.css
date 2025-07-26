@@ -1,0 +1,23 @@
+.contact {
+  padding: 4em 0;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 1em;
+}
+
+.contact p {
+  font-size: 1.2em;
+  margin: 0.5em 0;
+}
+
+.contact a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
