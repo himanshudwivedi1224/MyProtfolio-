@@ -24,3 +24,14 @@
   background-color: var(--primary-color);
   color: var(--background-color);
 }
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 2em 0;
+  }
+
+  .skills-list li {
+    padding: 0.6em 1.2em;
+    font-size: 0.9em;
+  }
+}

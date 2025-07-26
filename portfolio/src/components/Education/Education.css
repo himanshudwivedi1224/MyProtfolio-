@@ -16,3 +16,9 @@
 .education-item ul {
   padding-left: 20px;
 }
+
+@media (max-width: 768px) {
+  .education {
+    padding: 2em 0;
+  }
+}

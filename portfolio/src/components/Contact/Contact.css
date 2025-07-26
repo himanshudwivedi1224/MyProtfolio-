@@ -21,3 +21,13 @@
 .contact a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 2em 0;
+  }
+
+  .contact p {
+    font-size: 1em;
+  }
+}

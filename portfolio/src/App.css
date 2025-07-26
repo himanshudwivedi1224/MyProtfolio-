@@ -27,3 +27,9 @@ h1, h2, h3 {
 section {
   margin-bottom: 4em;
 }
+
+@media (max-width: 768px) {
+  .App {
+    padding: 1em;
+  }
+}
