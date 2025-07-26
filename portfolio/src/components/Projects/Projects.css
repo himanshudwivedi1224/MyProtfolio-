@@ -36,4 +36,7 @@
   .project-list {
     grid-template-columns: 1fr;
   }
+  .project {
+    width: 100%;
+  }
 }
