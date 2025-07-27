@@ -2,7 +2,7 @@ import React from 'react';
 import './About.css';
 import profileImage from '../../assets/WhatsApp Image 2025-04-03 at 09.52.52_81dd09bf.jpg'; // Corrected import path after moving assets
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <section id="about" className="about">
       <div className="container about-content">

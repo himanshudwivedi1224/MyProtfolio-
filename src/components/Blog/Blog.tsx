@@ -1,8 +1,16 @@
 import React from 'react';
 import './Blog.css';
 
-const Blog = () => {
-  const blogPosts = [
+const Blog: React.FC = () => {
+  interface BlogPost {
+    id: number;
+    title: string;
+    date: string;
+    summary: string;
+    link: string;
+  }
+
+  const blogPosts: BlogPost[] = [
     {
       id: 1,
       title: 'The Future of AI in Web Development',
@@ -31,7 +39,7 @@ const Blog = () => {
       <div className="container">
         <h2>Blog</h2>
         <div className="blog-list">
-          {blogPosts.map(post => (
+          {blogPosts.map((post: BlogPost) => (
             <div className="blog-post" key={post.id}>
               <h3>{post.title}</h3>
               <p className="blog-date">{post.date}</p>

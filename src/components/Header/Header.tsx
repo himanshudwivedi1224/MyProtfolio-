@@ -1,8 +1,13 @@
 import React from 'react';
 import './Header.css';
-import { FaSun, FaMoon } from 'react-icons/fa'; // Import icons
+import { FaSun, FaMoon } from 'react-icons/fa6'; // Import icons
 
-const Header = ({ toggleTheme, currentTheme }) => {
+interface HeaderProps {
+  toggleTheme: () => void;
+  currentTheme: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ toggleTheme, currentTheme }) => {
   return (
     <header className="header">
       <div className="container">

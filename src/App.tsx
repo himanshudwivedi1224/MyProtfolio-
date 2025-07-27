@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FC } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import About from './components/About/About';
@@ -9,7 +9,7 @@ import Contact from './components/Contact/Contact';
 import Skills from './components/Skills/Skills';
 import Education from './components/Education/Education';
 
-function App() {
+const App: FC = () => {
   const [theme, setTheme] = useState('dark'); // Default to dark theme
 
   useEffect(() => {

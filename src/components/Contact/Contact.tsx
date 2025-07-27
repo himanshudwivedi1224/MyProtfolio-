@@ -3,7 +3,7 @@ import './Contact.css';
 // You might need to install react-icons: npm install react-icons
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
-const Contact = () => {
+const Contact: React.FC = () => {
   return (
     <section id="contact" className="contact">
       <div className="container"> {/* Added container class */}

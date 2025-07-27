@@ -1,7 +1,7 @@
 import React from 'react';
 import './Projects.css';
 
-const Projects = () => {
+const Projects: React.FC = () => {
   return (
     <section id="projects" className="projects">
       <div className="container">

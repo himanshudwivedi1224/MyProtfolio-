@@ -1,7 +1,7 @@
 import React from 'react';
 import './Skills.css';
 
-const Skills = () => {
+const Skills: React.FC = () => {
   const skills = [
     'C#', 'Data Structures', 'Angular', 'React', 'Algorithms',
     'Critical Thinking', 'Azure', 'JavaScript', 'TypeScript',
