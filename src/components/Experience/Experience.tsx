@@ -7,6 +7,19 @@ const Experience: React.FC = () => {
       <div className="container">
         <h2>Professional Experience</h2>
         <div className="experience-list">
+          {/* Professional Experience - Commonwealth Bank of Australia */}
+          <div className="experience-item">
+            <h3>Commonwealth Bank of Australia (Jan 2021 — Sep 2021)</h3>
+            <h4>GenAI and Full Stack Web Developer</h4>
+            <p>Developed and maintained web applications with a focus on GenAI and full stack web development technologies.</p>
+            <ul>
+              <li>Contributed to the development of GenAI-powered features, enhancing user interaction and automation.</li>
+              <li>Implemented full-stack solutions using modern web development frameworks and practices.</li>
+              <li>Collaborated with cross-functional teams to deliver high-quality software solutions.</li>
+              <li>Optimized application performance and ensured scalability for growing user bases.</li>
+            </ul>
+          </div>
+
           {/* Professional Experience - Ernst & Young */}
           <div className="experience-item">
             <h3>Ernst & Young (Feb 2024 — Present)</h3>
