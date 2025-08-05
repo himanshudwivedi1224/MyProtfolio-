@@ -1,52 +1,80 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown'; // Import ReactMarkdown
 import './Blog.css'; // Assuming BlogPost will use similar styling
 
+// Define interface for blog post data, including slug for routing
 interface BlogPostData {
-  id: number;
+  id: number; // Keep id for key prop, though slug will be used for routing
   title: string;
   date: string;
   summary: string;
-  content: string; // Added content field for the full blog post
-  link: string; // This might not be needed here, but keeping for consistency with Blog.tsx
+  slug: string; // Added slug for routing
+  // link property is no longer needed as it will be constructed from slug
 }
 
-// Mock blog post data - in a real app, this would come from an API or a more robust data management system
+// Mock blog post data - in a real app, this would come from markdown files or an API
+// This mock data is used here to provide metadata, but the content will be fetched.
 const mockBlogPosts: BlogPostData[] = [
   {
     id: 1,
     title: 'The Future of AI in Web Development',
     date: 'July 20, 2025',
     summary: 'Exploring how artificial intelligence is revolutionizing web development, from automated code generation to intelligent user interfaces.',
-    content: 'Artificial intelligence (AI) is rapidly transforming the landscape of web development. From enhancing developer productivity with AI-powered coding assistants to creating more dynamic and personalized user experiences, AI is becoming an indispensable tool. This post delves into the various ways AI is being integrated into the web development workflow, including automated testing, intelligent debugging, and the creation of adaptive user interfaces. We will also explore the ethical considerations and future potential of AI in this field.',
-    link: '#'
+    slug: 'ai-web-development', // Slug for the AI blog post
   },
   {
     id: 2,
     title: 'Mastering Microservices with .NET Core',
     date: 'June 15, 2025',
     summary: 'A deep dive into building scalable and resilient microservices using .NET Core, covering best practices and common pitfalls.',
-    content: '.NET Core provides a robust framework for building microservices, offering high performance and cross-platform compatibility. This article explores the architectural patterns for microservices, such as the API Gateway and Service Discovery. We will discuss strategies for inter-service communication, data management in a distributed system, and containerization using Docker and Kubernetes. Learn how to design, develop, and deploy microservices effectively with .NET Core.',
-    link: '#'
+    slug: 'mastering-dotnetcore-microservice', // Slug for the microservices blog post
   },
   {
     id: 3,
     title: 'React Hooks: A Comprehensive Guide',
     date: 'May 10, 2025',
     summary: 'An in-depth guide to React Hooks, demonstrating how to write cleaner and more functional React components.',
-    content: 'React Hooks have revolutionized the way we write stateful logic in functional components. This guide provides a comprehensive overview of essential hooks like useState, useEffect, useContext, and custom hooks. We will walk through practical examples to illustrate how hooks simplify component logic, improve reusability, and make code more readable. Understand the benefits of hooks and how to leverage them effectively in your React applications.',
-    link: '#'
+    slug: 'react-webhooks', // Slug for the React Hooks blog post
   },
 ];
 
 const BlogPost: React.FC = () => {
-  const { id } = useParams<{ id: string }>(); // Get the id from the URL parameters
-  const postId = parseInt(id!, 10); // Convert id to a number, asserting it's not undefined
+  // Get the slug from the URL parameters
+  const { slug } = useParams<{ slug: string }>();
+  const [postContent, setPostContent] = useState<string>('');
+  const [postMetadata, setPostMetadata] = useState<BlogPostData | null>(null);
 
-  // Find the blog post that matches the id
-  const post = mockBlogPosts.find(p => p.id === postId);
+  useEffect(() => {
+    // Find metadata for the current slug
+    const foundPost = mockBlogPosts.find(p => p.slug === slug);
+    setPostMetadata(foundPost || null);
 
-  if (!post) {
+    // Fetch the markdown file content
+    // This assumes your markdown files are served statically at a path like /Content/Blog/{slug}.md
+        const fetchMarkdown = async () => {
+          try {
+            // Adjust the path based on your project structure and how files are served
+            // The base path '/MyPortfolio' needs to be included for static file fetching
+            const response = await fetch(`/MyPortfolio/Content/Blog/${slug}.md`); // Corrected path to include base path
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const markdownText = await response.text();
+            console.log("Fetched markdown content:", markdownText); // Log the fetched content
+            setPostContent(markdownText);
+          } catch (error) {
+            console.error("Error fetching markdown:", error);
+            setPostContent("Error loading blog post.");
+          }
+        };
+
+    if (slug) {
+      fetchMarkdown();
+    }
+  }, [slug]);
+
+  if (!postMetadata) {
     return (
       <section className="blog-post-detail container">
         <h2>Blog Post Not Found</h2>
@@ -57,13 +85,11 @@ const BlogPost: React.FC = () => {
 
   return (
     <section className="blog-post-detail container">
-      <h2>{post.title}</h2>
-      <p className="blog-date">{post.date}</p>
+      <h2>{postMetadata.title}</h2>
+      <p className="blog-date">{postMetadata.date}</p>
       <div className="blog-content">
-        {/* Render the full content of the blog post */}
-        {post.content.split('\\n').map((line, index) => (
-          <p key={index}>{line}</p>
-        ))}
+        {/* Render the full content of the blog post using ReactMarkdown */}
+        <ReactMarkdown>{postContent}</ReactMarkdown>
       </div>
     </section>
   );

@@ -38,7 +38,7 @@ const App: FC = () => {
               <Contact />
             </>
           } />
-          <Route path="/MyPortfolio/blog/:id" element={<BlogPost />} />
+          <Route path="/MyPortfolio/blog/:slug" element={<BlogPost />} /> {/* Updated route to use slug */}
         </Routes>
       </div>
     </Router>

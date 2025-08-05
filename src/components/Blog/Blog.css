@@ -60,7 +60,7 @@
 
 /* Styles for individual blog post detail page */
 .blog-post-detail {
-  padding: 3em 0;
+  padding: 4em 2em;
   max-width: 800px;
   margin: 0 auto;
   color: var(--text-color);
@@ -81,6 +81,51 @@
   font-size: 1.05em;
   line-height: 1.8;
   margin-bottom: 1em;
+}
+
+/* Add styles for code blocks */
+.blog-content pre {
+  background-color: var(--card-background); /* Or a distinct code block background */
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto; /* Enable horizontal scrolling for code blocks */
+  margin-bottom: 1em;
+  border: 1px solid var(--border-color);
+}
+
+.blog-content code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  color: var(--text-color); /* Or a specific code color */
+  background-color: transparent; /* Reset background for inline code */
+}
+
+.blog-content pre code {
+  display: block; /* Ensure code block takes full width */
+  white-space: pre-wrap; /* Wrap long lines of code */
+  word-wrap: break-word; /* Break words if necessary */
+}
+
+/* Further refine mobile responsiveness for blog content */
+@media (max-width: 768px) {
+  .blog-content p,
+  .blog-content li {
+    font-size: 1em; /* Slightly larger font for better readability on mobile */
+  }
+  .blog-content h2,
+  .blog-content h3,
+  .blog-content h4,
+  .blog-content h5,
+  .blog-content h6 {
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+  }
+  .blog-content pre {
+    padding: 0.8em;
+  }
+  .blog-content code {
+    font-size: 0.85em;
+  }
 }
 
 @media (max-width: 768px) {

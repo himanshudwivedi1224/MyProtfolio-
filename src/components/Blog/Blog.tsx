@@ -3,35 +3,38 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './Blog.css';
 
 const Blog: React.FC = () => {
+  // Define interface for blog post data, including slug for routing
   interface BlogPost {
-    id: number;
+    id: number; // Keep id for key prop, though slug will be used for routing
     title: string;
     date: string;
     summary: string;
-    link: string; // This will be updated to be the route path
+    slug: string; // Added slug for routing
+    // link property is no longer needed as it will be constructed from slug
   }
 
+  // Mock blog post data - in a real app, this would come from markdown files or an API
   const blogPosts: BlogPost[] = [
     {
       id: 1,
       title: 'The Future of AI in Web Development',
       date: 'July 20, 2025',
       summary: 'Exploring how artificial intelligence is revolutionizing web development, from automated code generation to intelligent user interfaces.',
-      link: '/MyPortfolio/blog/1' // Updated link to route with /MyPortfolio
+      slug: 'ai-web-development', // Slug for the AI blog post
     },
     {
       id: 2,
       title: 'Mastering Microservices with .NET Core',
       date: 'June 15, 2025',
       summary: 'A deep dive into building scalable and resilient microservices using .NET Core, covering best practices and common pitfalls.',
-      link: '/MyPortfolio/blog/2' // Updated link to route with /MyPortfolio
+      slug: 'mastering-dotnetcore-microservice', // Slug for the microservices blog post
     },
     {
       id: 3,
       title: 'React Hooks: A Comprehensive Guide',
       date: 'May 10, 2025',
       summary: 'An in-depth guide to React Hooks, demonstrating how to write cleaner and more functional React components.',
-      link: '/MyPortfolio/blog/3' // Updated link to route with /MyPortfolio
+      slug: 'react-webhooks', // Slug for the React Hooks blog post
     },
   ];
 
@@ -45,8 +48,8 @@ const Blog: React.FC = () => {
               <h3>{post.title}</h3>
               <p className="blog-date">{post.date}</p>
               <p>{post.summary}</p>
-              {/* Use Link component for navigation */}
-              <Link to={post.link}>Read More</Link>
+              {/* Use Link component for navigation with slug */}
+              <Link to={`/MyPortfolio/blog/${post.slug}`}>Read More</Link>
             </div>
           ))}
         </div>
