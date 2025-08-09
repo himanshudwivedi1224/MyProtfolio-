@@ -1,4 +1,5 @@
 import React, { useState, useEffect, FC } from 'react';
+import { Button } from "@/components/ui/button"; // Assuming shadcn/ui Button
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
@@ -25,7 +26,12 @@ const App: FC = () => {
   return (
     <Router> {/* Removed basename */}
       <div className="App">
-        <Header toggleTheme={toggleTheme} currentTheme={theme} />
+<Header toggleTheme={toggleTheme} currentTheme={theme} />
+<div className="hero-section">
+  <h1 className="text-4xl font-bold">Hi, I'm Himanshu 👋</h1>
+  <p className="mt-2 text-lg">I build intelligent, scalable apps using .NET, Angular, and GenAI.</p>
+  <Button>Download Resume</Button> <Button variant="ghost">View Projects</Button>
+</div>
         <Routes>
           <Route path="/MyPortfolio" element={
             <> {/* Using React Fragment */}
